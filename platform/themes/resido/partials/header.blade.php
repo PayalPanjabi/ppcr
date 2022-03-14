@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family={{ urlencode(theme_option('font_body', 'Muli')) }}:300,400,600,700" rel="stylesheet" type="text/css">
     <!-- CSS Library-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         :root {
             --primary-color: {{ theme_option('primary_color', '#2b4db9') }};
@@ -21,7 +22,16 @@
 
       
     </style>
-    
+    <script>
+function myFunction() {
+  var x = document.getElementById("Demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
     <script>
           function showHover(e){
     var boundingRect = e.getBoundingClientRect();
@@ -162,8 +172,7 @@ function hideHover(e){
                         <span></span>
                         <span></span>
                         <span></span>
-                        <i class="fa fa-phone" style="color:#BA0000"></i> 9876 543 210
-                        </a>
+                        <i class="fa fa-phone" style="color:#BA0000"></i>  Raj Yadav-8806170989    </a>
                       
                         </div>
                     </div>
@@ -197,11 +206,13 @@ function hideHover(e){
                         <a  href="/about-us" class="dropbtn">About Us</a>  
                     </div>
                     <div class="dropdown">
-                        <a class="dropbtn">Services</a>
+                        <a href="services" class="dropbtn">Services</a>
                         <div class="dropdown-content">
                             <a href="/advisory-services">Advisory</a>
                             <a href="/transaction-management">Transaction Management</a>
                             <a href="/tenant-representation">Tenant Representation</a>
+                            <a href="/interior-design">Interior Design</a>
+                            
                         </div>
                     </div> 
                    
@@ -307,8 +318,9 @@ function hideHover(e){
                             </form>
                         @endif
 
-                        <div class="clearfix"></div>
-                        
+                        <div class="clearfix" style=" width: 106%;
+    margin-left: -10px;-webkit-box-shadow: 0 5px 30px rgb(0 22 84 / 10%);"></div>
+                    
                         <div id="mySidenav" class="sidenav">
                             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                             <div class="mobile-menu-item mobile-wishlist">
@@ -317,24 +329,34 @@ function hideHover(e){
                             <div class="mobile-menu-item mobile-wishlist">
                             <a href="/about-us"><i class="fa fa-info-circle" style="font-size: 14px;"></i> About Us</a>
                             </div>
-                            <div class="mobile-menu-item mobile-wishlist">
-                            <a href="/services"><i class="fa fa-server" 
-                            style="font-size: 14px;"></i> Services</a>
-                            </div>
+                             <div class="w3-dropdown-click">
+                                <a onclick="myFunction()" class="w3-button w3-black"><i class="fa fa-server" 
+                                    style="font-size: 14px;"></i> Services &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                                <a href="/services"  class="w3-bar-item w3-button">Our Services</a>
+                                  <a href="/advisory-services" class="w3-bar-item w3-button">Advisory</a>
+                                  <a href="/transaction-management" class="w3-bar-item w3-button">Transaction Management</a>
+                                  <a href="/tenant-representation" class="w3-bar-item w3-button">Tenant Representation</a>
+                                  
+                                   <a href="/interior-design" class="w3-bar-item w3-button">Interior Design</a>
+                                </div>
+                              </div>
+                          
                             <div class="mobile-menu-item mobile-wishlist">
                             <a href="/find-properties"><i class="fa fa-building" 
                             style="font-size: 14px;"></i> Find Properties</a>
                             </div>
                             
                             <div class="mobile-menu-item mobile-wishlist">
-                            <a href="/news"><i class="fa fa-newspaper-o" 
-                            style="font-size: 14px;"></i> 
+                            <a href="/news"><i class="fas fa-newspaper" style="font-size: 14px;"></i>
+                            <!--<i class="fa fa-newspaper-o" -->
+                            <!--style="font-size: 14px;"></i> -->
                             Blog</a>
                             </div>
-                            <div class="mobile-menu-item mobile-wishlist">
-                            <a href="#"><i class="fa fa-graduation-cap" 
-                            style="font-size: 14px;"></i> Careers</a>
-                            </div>
+                            <!--<div class="mobile-menu-item mobile-wishlist">-->
+                            <!--<a href="#"><i class="fa fa-graduation-cap" -->
+                            <!--style="font-size: 14px;"></i> Careers</a>-->
+                            <!--</div>-->
                             <div class="mobile-menu-item mobile-wishlist">
                             <a href="/contact"><i class="fas fa-phone" style="font-size: 14px;"></i> Contact Us</a>
                             </div>
@@ -345,6 +367,7 @@ function hideHover(e){
         </div>
     </div>
     <!-- End Navigation -->
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>-->
     <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -353,4 +376,15 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+
+document.getElementById("price").onkeyup = function() {myFunction()};
+
+ 
+                // $('#area_available').keyup(calculate);
+                // $('#price').keyup(calculate);
+             function myFunction()
+            {
+                alert("hiiiiiiiii");
+                // $('#monthly_sq_ft').val($('#area_available').val() * $('#price').val());
+             }
 </script>

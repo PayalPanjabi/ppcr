@@ -1,4 +1,4 @@
-<select id="minprice" data-placeholder="{{ __('No Min') }}" name="min_price" class="form-control">
+<!-- <select id="minprice" data-placeholder="{{ __('No Min') }}" name="min_price" class="form-control">
     <option value="">&nbsp;</option>
     @if (theme_option('min_price'))
         @foreach (get_repeat_field('min_price') as $item)
@@ -9,4 +9,4 @@
             @endif
         @endforeach
     @endif
-</select>
+</select> -->

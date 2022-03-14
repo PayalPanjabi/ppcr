@@ -23,7 +23,7 @@ class PropertyRequest extends Request
             'number_bedroom'    => 'numeric|min:0|max:10000|nullable',
             'number_bathroom'   => 'numeric|min:0|max:10000|nullable',
             'number_floor'      => 'numeric|min:0|max:10000|nullable',
-            'price'             => 'numeric|min:0|nullable',
+            'price'             => 'required',
             'latitude'          => 'max:20|nullable',
             'longitude'         => 'max:20|nullable',
             'moderation_status' => Rule::in(ModerationStatusEnum::values()),

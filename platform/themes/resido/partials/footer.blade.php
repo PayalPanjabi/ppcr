@@ -20,7 +20,7 @@
                             @if (theme_option('email'))
                                 <p><i class="fas fa-envelope"></i> {{ theme_option('email') }}</p>
                             @endif -->
-                            <p>PPCR Services is a leading property services corporation specializing in advisory and real estate transaction management. With over 24 years of experience across sectors in successfully implementing real estate solutions, we have advised a wide range of corporations and supported them in their intent of implementing the right workplace strategy. We are focused on tenant representation – with service coverage in 80 markets across India and global capability by virtue of our membership of the Exis Global platform.</p>
+                            <p>PPCR is a real estate managed services corporation that offers a high-value solution for real estate advisory and transactions by combining its in-depth knowledge of Indian markets and real estate intricacies with an inherent understanding of world real estate best practices.</p>
                         </div>
                         <!-- <div class="col-lg-6 col-md-6"> -->
                             @if (theme_option('social_links'))
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-sm-1"></div>
-                <div class="col-sm-4">
+                <div class="col-sm-4" style="margin-top: 23px;">
                     <!-- <div class="row">
                         {!! dynamic_sidebar('footer_sidebar_2') !!}
                     </div> -->
@@ -48,6 +48,12 @@
                             @if (theme_option('address'))
                                 <p><i class="fas fa-map-marker-alt"></i> {{ theme_option('address') }}</p>
                             @endif
+                            
+                            <p>
+                              <!--<span><b>Branch Offfice:</b></span> <br>-->
+                              <i class="fas fa-map-marker-alt"></i> Viman Nagar, Pune.
+                            </p>
+                            
                             @if (theme_option('hotline'))
                                 <p><i class="fas fa-phone-square"></i> {{ theme_option('hotline') }}</p>
                             @endif
@@ -93,7 +99,15 @@
     </div>
 </footer>
 <!-- ============================ Footer End ================================== -->
-
+ <script>
+        document.getElementById("price").onkeyup = function() {myFunction()};
+    document.getElementById("price").setAttribute("value", "10");
+        function myFunction() {
+        //   var x = document.getElementById("fname");
+        //   x.value = x.value.toUpperCase();
+        alert("Hiiiiii");
+        }
+    </script>
 <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
 </div>
 
@@ -120,7 +134,9 @@
             @endforeach
             @endif
         });
+          
     </script>
     @endif
+   
 </body>
 </html>

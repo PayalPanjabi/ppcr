@@ -29,7 +29,7 @@ class CreateRealEstateTable extends Migration
             $table->longText('content')->nullable();
             $table->string('location')->nullable();
             $table->text('images')->nullable();
-            $table->integer('number_bedroom')->nullable();
+            $table->integer('number_workstation')->nullable();
             $table->integer('number_bathroom')->nullable();
             $table->integer('number_floor')->nullable();
             $table->integer('square')->nullable();

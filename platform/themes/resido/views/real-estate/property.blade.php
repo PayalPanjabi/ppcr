@@ -120,6 +120,7 @@
                     <!-- Agent Detail -->
                         <div class="sides-widget">
                             <div class="sides-widget-header">
+                                <h2 style="font-size: 28px;color: #fff;">Enquiry Form</h2>
                                 @if ($author->username)
                                     <div class="agent-photo">
                                         <img src="{{ RvMedia::getImageUrl($author->avatar->url, 'thumb') }}"

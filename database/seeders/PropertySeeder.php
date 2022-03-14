@@ -254,11 +254,13 @@ class PropertySeeder extends BaseSeeder
                 $item['is_featured'] = 1;
                 $item['description'] = $faker->text();
                 $item['location'] = $faker->address;
-                $item['number_bedroom'] = $faker->numberBetween(1, 5);
-                $item['number_bathroom'] = $faker->numberBetween(1, 5);
+                $item['number_workstation'] = $faker->numberBetween(1, 5);
+                $item['number_cabin'] = $faker->numberBetween(1, 5);
                 $item['number_floor'] = $faker->numberBetween(1, 5);
                 $item['square'] = $faker->numberBetween(50, 500);
                 $item['price'] = $faker->numberBetween(5000, 500000);
+                $item['camp_charges'] = $faker->numberBetween(1000, 500000);
+                
                 $item['currency_id'] = 1;
                 $item['never_expired'] = 1;
                 $item['type_id'] = $locale == 'en_US' ? $faker->numberBetween(1, 2) : $faker->numberBetween(3, 4);

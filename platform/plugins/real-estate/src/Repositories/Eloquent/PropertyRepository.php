@@ -163,13 +163,13 @@ class PropertyRepository extends RepositoriesAbstract implements PropertyInterfa
             });
         }
 
-        if ($filters['bedroom']) {
-            if ($filters['bedroom'] < 5) {
-                $this->model = $this->model->where('re_properties.number_bedroom', $filters['bedroom']);
-            } else {
-                $this->model = $this->model->where('re_properties.number_bedroom', '>=', $filters['bedroom']);
-            }
-        }
+        // if ($filters['workstation']) {
+        //     if ($filters['workstation'] < 5) {
+        //         $this->model = $this->model->where('re_properties.number_workstation', $filters['bedroom']);
+        //     } else {
+        //         $this->model = $this->model->where('re_properties.number_workstation', '>=', $filters['bedroom']);
+        //     }
+        // }
 
         if ($filters['bathroom']) {
             if ($filters['bathroom'] < 5) {

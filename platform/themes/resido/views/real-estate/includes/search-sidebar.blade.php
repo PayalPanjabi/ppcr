@@ -92,7 +92,7 @@
             <input type="hidden" id="filter_sort_by" name="sort_by" value="{{ request()->input('sort_by') }}">
 
             <button class="btn btn btn-theme-light-2 rounded full-width mt-3"
-                    type="submit">{{ __('Find New Home') }}</button>
+                    type="submit">{{ __('Find New Properties') }}</button>
         </form>
     </div>
 </div>

@@ -1,10 +1,11 @@
 <div class="image-bottom hero-banner"
-    style="background:url('/storage/banners/slide1.png') no-repeat;"
+    style="background:url('/storage/smart-building.png') no-repeat;"
     data-overlay="{{ $overlay }}">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-md-11 col-sm-12">
-                <div class="inner-banner-text text-center">
+                <br>
+                <div class="inner-banner-text text-center text">
                     <p class="lead-i">{!! clean($title) !!}</p>
                     <h2>{!! clean($description) !!}</h2>
                 </div>

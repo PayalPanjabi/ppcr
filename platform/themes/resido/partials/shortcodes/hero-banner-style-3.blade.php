@@ -1,3 +1,4 @@
+
 <div class="image-bottom hero-banner"
     style="background:url('/storage/banners/banner-99.jpg') no-repeat;"
     data-overlay="{{ $overlay }}">
@@ -10,7 +11,7 @@
 
                 <form action="{{ route('public.properties') }}" method="GET" id="frmhomesearch">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-12 b-r">
+                        <div class="col-lg-6 col-md-4 col-sm-12 b-r">
                             <div class="form-group borders">
                                 <div class="input-with-icon">
                                     <input type="text" name="k" class="form-control" placeholder="{{ __('Neighborhood') }}">
@@ -18,8 +19,39 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-6 col-md-3 col-sm-12 ">
+                                    <div class="form-group">
+                                        <div class="choose-property-type">
+                                            {!! Theme::partial('real-estate.filters.type') !!}
+                                        </div>
+                                     
+                                    </div>
+                                   
+                        </div>
+                        <div  class="col-lg-3 col-md-3 col-sm-12 b-r">
+                            <div class="form-group borders">
+                            
+                                <ul style="display:flex;    margin-left: -6px;
+    margin-top: 9px;">
+                                     <li>
+                                        <input type="text" class="form-control" name="min_area" 
+                                        value="{{ request()->input('min_area') }}" placeholder="{{ __('Min Area') }}">
+                                    </li>
+                                    <li>
+                                        <input type="text" class="form-control" name="max_area"
+                                        value="{{ request()->input('max_area') }}" placeholder="{{ __('Max Area') }}">
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div size="1.4" class="col-lg-2 col-md-3 col-sm-12 b-r">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="max_area" value="{{ request()->input('max_area') }}" placeholder="{{ __('Max Area') }}">
+                            </div>
+                        </div> -->
 
-                        <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="col-lg-4 col-md-3 col-sm-12">
                             <div class="form-group borders">
                                 <div class="input-with-icon">
                                     {!! Theme::partial('real-estate.filters.categories') !!}

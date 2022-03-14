@@ -1,4 +1,4 @@
-<select id="select-bathroom" data-placeholder="{{ __('Bathroom') }}" name="bathroom" class="form-control">
+<!-- <select id="select-bathroom" data-placeholder="{{ __('Bathroom') }}" name="bathroom" class="form-control">
     <option value="">&nbsp;</option>
     @if (theme_option('bathroom'))
         @foreach (get_repeat_field('bathroom') as $i => $item)
@@ -9,4 +9,4 @@
             @endif
         @endforeach
     @endif
-</select>
+</select> -->

@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-md-12" style="text-align: center;color: #fff; font-family: system-ui;">
                     <h2 style="text-align: center; font-family: system-ui; display: block; font-size: 50px; line-height: 1.2em;color: #fff;font-weight: 700;">Embracing the digital world, With cutting-edge technology.</h2>
-                    <p>Cityinfo’s best-in-class services are augmented by next-generation technology applications</p>
+                    <p>PPCR's best-in-class services are augmented by next-generation technology applications</p>
                         <!-- <div class="home-slider-container"> -->
 
                             <!-- Slide Title -->

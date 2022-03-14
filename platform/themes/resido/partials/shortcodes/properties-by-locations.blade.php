@@ -53,12 +53,12 @@ if (is_plugin_active('location')) {
             @endforeach
         </div>
 
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                <a href="{{ route('public.properties') }}"
-                    class="btn btn-theme-light-2 rounded">{{ __('Browse More Locations') }}</a>
-            </div>
-        </div>
+        <!--<div class="row">-->
+        <!--    <div class="col-lg-12 col-md-12 col-sm-12 text-center">-->
+        <!--        <a href="{{ route('public.properties') }}"-->
+        <!--            class="btn btn-theme-light-2 rounded">{{ __('Browse More Locations') }}</a>-->
+        <!--    </div>-->
+        <!--</div>-->
 
     </div>
 </section>

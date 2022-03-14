@@ -52,7 +52,7 @@ class PropertyForm extends FormAbstract
      */
     protected $categoryRepository;
 
-    /**
+    /**s
      * @var TypeInterface
      */
     protected $typeRepository;
@@ -238,64 +238,112 @@ class PropertyForm extends FormAbstract
             ->add('rowOpen1', 'html', [
                 'html' => '<div class="row">',
             ])
-            ->add('number_bedroom', 'number', [
-                'label'      => trans('plugins/real-estate::property.form.number_bedroom'),
+            ->add('number_workstation', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.number_workstation'),
                 'label_attr' => ['class' => 'control-label'],
                 'wrapper'    => [
                     'class' => 'form-group mb-3 col-md-3',
                 ],
                 'attr'       => [
-                    'placeholder' => trans('plugins/real-estate::property.form.number_bedroom'),
+                    'placeholder' => trans('plugins/real-estate::property.form.number_workstation'),
                 ],
             ])
-            ->add('number_bathroom', 'number', [
-                'label'      => trans('plugins/real-estate::property.form.number_bathroom'),
+            ->add('number_cabin', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.number_cabin'),
                 'label_attr' => ['class' => 'control-label'],
                 'wrapper'    => [
                     'class' => 'form-group mb-3 col-md-3',
                 ],
                 'attr'       => [
-                    'placeholder' => trans('plugins/real-estate::property.form.number_bathroom'),
+                    'placeholder' => trans('plugins/real-estate::property.form.number_cabin'),
                 ],
             ])
-            ->add('number_floor', 'number', [
-                'label'      => trans('plugins/real-estate::property.form.number_floor'),
+            ->add('number_conference_room', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.number_conference_room'),
                 'label_attr' => ['class' => 'control-label'],
                 'wrapper'    => [
                     'class' => 'form-group mb-3 col-md-3',
                 ],
                 'attr'       => [
-                    'placeholder' => trans('plugins/real-estate::property.form.number_floor'),
+                    'placeholder' => trans('plugins/real-estate::property.form.number_conference_room'),
                 ],
             ])
-            ->add('square', 'number', [
-                'label'      => trans('plugins/real-estate::property.form.square', ['unit' => setting('real_estate_square_unit', 'm²') ? '(' . setting('real_estate_square_unit', 'm²') . ')' : null]),
+
+            ->add('deposit', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.deposit'),
                 'label_attr' => ['class' => 'control-label'],
                 'wrapper'    => [
                     'class' => 'form-group mb-3 col-md-3',
                 ],
                 'attr'       => [
-                    'placeholder' => trans('plugins/real-estate::property.form.square'),
+                    'placeholder' => trans('plugins/real-estate::property.form.deposit'),
                 ],
             ])
-            ->add('rowClose1', 'html', [
-                'html' => '</div>',
-            ])
-            ->add('rowOpen2', 'html', [
-                'html' => '<div class="row">',
-            ])
-            ->add('price', 'text', [
+            // ->add('square', 'number', [
+            //     'label'      => trans('plugins/real-estate::property.form.square', ['unit' => setting('real_estate_square_unit', 'm²') ? '(' . setting('real_estate_square_unit', 'm²') . ')' : null]),
+            //     'label_attr' => ['class' => 'control-label'],
+            //     'wrapper'    => [
+            //         'class' => 'form-group mb-3 col-md-3',
+            //     ],
+            //     'attr'       => [
+            //         'placeholder' => trans('plugins/real-estate::property.form.square'),
+            //     ],
+            // ])
+         
+            // ->add('rowClose1', 'html', [
+            //     'html' => '</div>',
+            // ])
+            // ->add('rowOpen2', 'html', [
+            //     'html' => '<div class="row">',
+            // ])
+            // ->add('price', 'text', [
+            //     'label'      => trans('plugins/real-estate::property.form.price'),
+            //     'label_attr' => ['class' => 'control-label'],
+            //     'wrapper'    => [
+            //         'class' => 'form-group mb-3 col-md-4',
+            //     ],
+            //     'attr'       => [
+            //         'id'          => 'price-number',
+            //         'placeholder' => trans('plugins/real-estate::property.form.price'),
+            //         'class'       => 'form-control input-mask-number',
+            //     ],
+            // ])
+            
+           ->add('price', 'text', [
                 'label'      => trans('plugins/real-estate::property.form.price'),
                 'label_attr' => ['class' => 'control-label'],
                 'wrapper'    => [
-                    'class' => 'form-group mb-3 col-md-4',
+                    'class' => 'form-group mb-3 col-md-3',
                 ],
                 'attr'       => [
-                    'id'          => 'price-number',
                     'placeholder' => trans('plugins/real-estate::property.form.price'),
-                    'class'       => 'form-control input-mask-number',
+                    'value'  => __(''),
                 ],
             ])
+            
+            ->add('camp_charges', 'text', [
+                'label'      => trans('plugins/real-estate::property.form.camp_charges'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.camp_charges'),
+                ],
+            ])
+
+            ->add('excalation_per_year', 'text', [
+                'label'      => trans('plugins/real-estate::property.form.excalation_per_year'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.excalation_per_year'),
+                    'value'  => __(''),
+                ],
+            ])
+
             ->add('currency_id', 'customSelect', [
                 'label'      => trans('plugins/real-estate::property.form.currency'),
                 'label_attr' => ['class' => 'control-label'],
@@ -307,17 +355,249 @@ class PropertyForm extends FormAbstract
                 ],
                 'choices'    => $currencies,
             ])
-            ->add('period', 'customSelect', [
-                'label'      => trans('plugins/real-estate::property.form.period'),
-                'label_attr' => ['class' => 'control-label required'],
+            ->add('built_up_office_area', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.built_up_office_area'),
+                'label_attr' => ['class' => 'control-label'],
                 'wrapper'    => [
-                    'class' => 'form-group period-form-group mb-3 col-md-4' . ($this->getModel()->type->slug != PropertyTypeEnum::RENT ? ' hidden' : null),
+                    'class' => 'form-group mb-3 col-md-3',
                 ],
                 'attr'       => [
-                    'class' => 'form-control select-search-full',
+                    'placeholder' => trans('plugins/real-estate::property.form.built_up_office_area'),
                 ],
-                'choices'    => PropertyPeriodEnum::labels(),
             ])
+            ->add('carpet_office_area', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.carpet_office_area'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.carpet_office_area'),
+                ],
+            ])
+            ->add('monthly_sq_ft', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.monthly_sq_ft'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.monthly_sq_ft'),
+                    'value'  => __(''),
+                ],
+            ])
+            ->add('agreement_of_year', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.agreement_of_year'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.agreement_of_year'),
+                ],
+            ])
+            ->add('lock_in_year', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.lock_in_year'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.lock_in_year'),
+                ],
+            ])
+
+          
+
+            ->add('number_of_floor', 'text', [
+                'label'      => trans('plugins/real-estate::property.form.number_of_floor'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.number_of_floor'),
+                ],
+            ])
+            ->add('per_floor_area', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.per_floor_area'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.per_floor_area'),
+                ],
+            ])
+            
+            ->add('year_of_completion', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.year_of_completion'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.year_of_completion'),
+                ],
+            ])
+            ->add('total_built_up_area', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.total_built_up_area'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.total_built_up_area'),
+                ],
+            ])
+            ->add('possession_status', 'text', [
+                'label'      => trans('plugins/real-estate::property.form.possession_status'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.possession_status'),
+                ],
+            ])
+            
+            
+            ->add('area_available', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.area_available'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.area_available'),
+                    'value'  => __(''),
+                ],
+            ])
+
+            ->add('min_area', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.min_area'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.min_area'),
+                ],
+            ])
+
+            ->add('max_area', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.max_area'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.max_area'),
+                ],
+            ])
+
+            
+            ->add('rowClose1', 'html', [
+                'html' => '</div>',
+            ])
+            ->add('rowOpen2', 'html', [
+                'html' => '<div class="row">',
+             ])
+        
+            //sale -
+            ->add('price_per_sqft', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.price_per_sqft'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.price_per_sqft'),
+                ],
+            ])
+            ->add('time_line', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.time_line'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.time_line'),
+                ],
+            ])
+            ->add('infra_charges', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.infra_charges'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.infra_charges'),
+                ],
+            ])
+            ->add('car_parking', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.car_parking'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.car_parking'),
+                ],
+            ])
+
+            // ->add('rowClose1', 'html', [
+            //     'html' => '</div>',
+            // ])
+            // ->add('rowOpen2', 'html', [
+            //     'html' => '<div class="row">',
+            // ])
+
+            //Pre lease-
+            ->add('roi', 'text', [
+                'label'      => trans('plugins/real-estate::property.form.roi'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.roi'),
+                ],
+            ])
+            ->add('locking', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.locking'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.locking'),
+                ],
+            ])
+            ->add('price_all_including', 'number', [
+                'label'      => trans('plugins/real-estate::property.form.price_all_including'),
+                'label_attr' => ['class' => 'control-label'],
+                'wrapper'    => [
+                    'class' => 'form-group mb-3 col-md-3',
+                ],
+                'attr'       => [
+                    'placeholder' => trans('plugins/real-estate::property.form.price_all_including'),
+                ],
+            ])
+
+ 
+
+            // ->add('period', 'customSelect', [
+            //     'label'      => trans('plugins/real-estate::property.form.period'),
+            //     'label_attr' => ['class' => 'control-label required'],
+            //     'wrapper'    => [
+            //         'class' => 'form-group period-form-group mb-3 col-md-4' . ($this->getModel()->type->slug != PropertyTypeEnum::RENT ? ' hidden' : null),
+            //     ],
+            //     'attr'       => [
+            //         'class' => 'form-control select-search-full',
+            //     ],
+            //     'choices'    => PropertyPeriodEnum::labels(),
+            // ])
             ->add('rowClose2', 'html', [
                 'html' => '</div>',
             ])
@@ -384,3 +664,4 @@ class PropertyForm extends FormAbstract
             ]);
     }
 }
+

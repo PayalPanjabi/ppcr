@@ -37,10 +37,44 @@ class Property extends BaseModel
         'content',
         'location',
         'images',
-        'number_bedroom',
-        'number_bathroom',
-        'number_floor',
-        'square',
+        // 'number_bedroom',
+        // 'number_bathroom',
+        // 'number_floor',
+        'number_workstation',
+        'number_cabin',
+        'number_conference_room',
+        'deposit',
+        'camp_charges',
+        'excalation_per_year',
+        'area_square_ft',
+        'built_up_office_area',
+        'carpet_office_area',
+        'monthly_sq_ft',// calcualte value
+        'agreement_of_year',
+        'lock_in_year',
+        'per_floor_area',
+        'year_of_completion',
+        'total_built_up_area',
+        'possession_status',
+        'area_available',
+        'number_of_floor',
+
+        'min_area',
+        'max_area',
+
+        //sale -
+        'price_per_sqft',
+        'time_line',
+        'infra_charges',
+        'car_parking',
+
+        // Pre lease-
+        'roi',
+        'locking',
+        'price_all_including',
+        
+
+        // 'square',
         'price',
         'is_featured',
         'currency_id',
@@ -240,8 +274,9 @@ class Property extends BaseModel
         $price = $this->price_format;
 
         if ($this->type->slug == PropertyTypeEnum::RENT) {
-            $price .= ' / ' . Str::lower($this->period->label());
-        }
+            // $price .= ' / ' . Str::lower($this->period->label());
+            $price;
+        } 
         return $price;
     }
 

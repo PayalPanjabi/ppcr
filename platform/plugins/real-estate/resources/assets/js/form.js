@@ -18,4 +18,14 @@ $(document).ready(() => {
     $('.image_input').on('change', function () {
         readURL(this);
     });
+    
+    
 });
+$(document).ready(function(){
+    $('#price').keyup(calculate);
+    $('#area_available').keyup(calculate);
+});
+function calculate(e)
+{
+    $('#monthly_sq_ft').val($('#price').val() * $('#area_available').val());
+}

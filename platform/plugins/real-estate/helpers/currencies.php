@@ -67,46 +67,46 @@ if (!function_exists('human_price_text')) {
      * @param string $priceUnit
      * @return string
      */
-    function human_price_text($price, $currency, $priceUnit = ''): string
+    function human_price_text($price = "", $currency, $priceUnit = '')
     {
-        $numberAfterDot = ($currency instanceof Currency) ? $currency->decimals : 0;
+        // $numberAfterDot = ($currency instanceof Currency) ? $currency->decimals : 0;
 
-        if (setting('real_estate_convert_money_to_text_enabled', config('plugins.real-estate.real-estate.display_big_money_in_million_billion'))) {
-            if ($price >= 1000000 && $price < 1000000000) {
-                $price = round($price / 1000000, 2) + 0;
-                $priceUnit = __('million') . ' ' . $priceUnit;
-                $numberAfterDot = strlen(substr(strrchr($price, '.'), 1));
-            } elseif ($price >= 1000000000) {
-                $price = round($price / 1000000000, 2) + 0;
-                $priceUnit = __('billion') . ' ' . $priceUnit;
-                $numberAfterDot = strlen(substr(strrchr($price, '.'), 1));
-            }
-        }
+        // if (setting('real_estate_convert_money_to_text_enabled', config('plugins.real-estate.real-estate.display_big_money_in_million_billion'))) {
+        //     if ($price >= 1000000 && $price < 1000000000) {
+        //         $price = round($price / 1000000, 2) + 0;
+        //         $priceUnit = __('million') . ' ' . $priceUnit;
+        //         $numberAfterDot = strlen(substr(strrchr($price, '.'), 1));
+        //     } elseif ($price >= 1000000000) {
+        //         $price = round($price / 1000000000, 2) + 0;
+        //         $priceUnit = __('billion') . ' ' . $priceUnit;
+        //         $numberAfterDot = strlen(substr(strrchr($price, '.'), 1));
+        //     }
+        // }
 
-        if (is_numeric($price)) {
-            $price = preg_replace('/[^0-9,.]/s', '', $price);
-        }
+        // if (is_numeric($price)) {
+        //     $price = preg_replace('/[^0-9,.]/s', '', $price);
+        // }
 
-        $decimalSeparator = setting('real_estate_decimal_separator', '.');
+        // $decimalSeparator = setting('real_estate_decimal_separator', '.');
 
-        if ($decimalSeparator == 'space') {
-            $decimalSeparator = ' ';
-        }
+        // if ($decimalSeparator == 'space') {
+        //     $decimalSeparator = ' ';
+        // }
 
-        $thousandSeparator = setting('real_estate_thousands_separator', ',');
+        // $thousandSeparator = setting('real_estate_thousands_separator', ',');
 
-        if ($thousandSeparator == 'space') {
-            $thousandSeparator = ' ';
-        }
+        // if ($thousandSeparator == 'space') {
+        //     $thousandSeparator = ' ';
+        // }
 
-        $price = number_format(
-            $price,
-            $numberAfterDot,
-            $decimalSeparator,
-            $thousandSeparator
-        );
+        // $price = number_format(
+        //     $price,
+        //     $numberAfterDot,
+        //     $decimalSeparator,
+        //     $thousandSeparator
+        // );
 
-        return $price . ($priceUnit ?: '');
+        return $price;
     }
 }
 

@@ -1,4 +1,4 @@
-<select id="maxprice" data-placeholder="{{ __('No Max') }}" name="max_price" class="form-control">
+<!-- <select id="maxprice" data-placeholder="{{ __('No Max') }}" name="max_price" class="form-control">
     <option value="">&nbsp;</option>
     @if (theme_option('max_price'))
         @foreach (get_repeat_field('max_price') as $item)
@@ -9,4 +9,4 @@
             @endif
         @endforeach
     @endif
-</select>
+</select> -->

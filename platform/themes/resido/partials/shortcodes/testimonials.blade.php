@@ -1,5 +1,20 @@
 <style>
-
+.w3-modal {
+    z-index: 3;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 8px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.w3-container{
+    padding: 22px;
+}
 </style>
 <section class="">
     <div class="container">
@@ -7,18 +22,17 @@
             <div class="col-lg-7 col-md-10 text-center">
                 <div class="sec-heading center">
                     <h2>Analyze your choices from the Office Property Merchandise.</h2><br>
-                    <p>Our field of expertise is inventory modeling and upgrading. A team working throughout India is fully committed to listing and monitoring commercial real estate choices in all key markets.
+                    <p>Our field of expertise is inventory modeling and upgrading. A team working throughout India is fully committed to listing and monitoring commercial real estate choices in all key markets.
                     </p>
                 </div>
             </div>
         </div>
     
-        <div class="full-search-2 eclip-search italian-search hero-search-radius shadow">
+        <div class="full-search-2 eclip-search italian-search hero-search-radius shadow hero-search-redius1">
             <div class="hero-search-content">
-
                 <form action="{{ route('public.properties') }}" method="GET" id="frmhomesearch">
                     <div class="row">
-                        <div class="col-lg-2 col-md-4 col-sm-12 b-r">
+                        <div class="col-lg-6 col-md-4 col-sm-12 b-r">
                             <div class="form-group borders">
                                 <div class="input-with-icon">
                                     <input type="text" name="k" class="form-control" placeholder="{{ __('Neighborhood') }}">
@@ -26,14 +40,39 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-3 col-sm-12 b-r">
+                        <div class="col-lg-6 col-md-3 col-sm-12 ">
                                     <div class="form-group">
                                         <div class="choose-property-type">
                                             {!! Theme::partial('real-estate.filters.type') !!}
                                         </div>
+                                     
                                     </div>
+                                   
                         </div>
-                        <div class="col-lg-2 col-md-3 col-sm-12">
+                        <div  class="col-lg-3 col-md-3 col-sm-12 b-r">
+                            <div class="form-group borders">
+                            
+                                <ul style="display:flex;     margin-left: -6px;
+    margin-top: 9px;">
+                                    <li>
+                                    <input type="text" class="form-control" name="min_area" 
+                                        value="{{ request()->input('min_area') }}" placeholder="{{ __('Min Area') }}">
+                                    </li>
+                                    <li>
+                                        <input type="text" class="form-control" name="max_area"
+                                        value="{{ request()->input('max_area') }}" placeholder="{{ __('Max Area') }}">
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div size="1.4" class="col-lg-2 col-md-3 col-sm-12 b-r">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="max_area" value="{{ request()->input('max_area') }}" placeholder="{{ __('Max Area') }}">
+                            </div>
+                        </div> -->
+
+                        <div class="col-lg-4 col-md-3 col-sm-12">
                             <div class="form-group borders">
                                 <div class="input-with-icon">
                                     {!! Theme::partial('real-estate.filters.categories') !!}
@@ -41,10 +80,8 @@
                                 </div>
                             </div>
                         </div>
-                   
 
-
-                        <div class="col-lg-2 col-md-3 col-sm-12">
+                        <div class="col-lg-3 col-md-3 col-sm-12">
                             <div class="form-group borders">
                                 <div class="input-with-icon b-l">
                                     {!! Theme::partial('real-estate.filters.cities') !!}
@@ -55,11 +92,12 @@
 
                         <div class="col-lg-2 col-md-2 col-sm-12">
                             <div class="form-group">
-                                <button class="btn search-btn" type="submit">{{ __('Search') }}</button>
+                               <button type="button" onclick="document.getElementById('id01').style.display='block'" class="btn search-btn btn-info btn-lg"> Search</button>
                             </div>
                         </div>
                     </div>
                 </form>
+               
             </div>
         </div>
     </div>
@@ -77,18 +115,18 @@
 
                     <div class="carousel-inner text-center">
                         <div class="item">
-                            <blockquote>
+                            <blockquote style="border-left: 5px solid #b61b1b00;">
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-2">
                                     <h2 style="color: #fff;text-align:left;">The PPCR Story</h2>
-            <p style="color: #fff;text-align:left;">The emergence of PPCR Services runs parallel to India’s emergence as an economic superpower. In 1996, as the world started getting increasingly interested in the potential of India, PPCR established itself as an innovative provider of information services – helping multinational corporations navigate their path to market entry and expansion. Today, we stand tall in the real estate advisory space – having successfully completed 1200+ transactions, with over 42 million sq.ft. of space transacted in 80 locations across India.</p>
+            <p style="color: #fff;text-align:left;">The emergence of PPCR Services runs parallel to India’s emergence as an economic superpower. In 2017, as the world started getting increasingly interested in the potential of India, PPCR established itself as an innovative provider of information services – helping multinational corporations navigate their path to market entry and expansion. Today, we stand tall in the real estate advisory space – having successfully completed 50+ transactions, with over 1.5Lac sq.ft. of space transacted in Pune City.</p>
                                     </div>
                                 </div>
                             </blockquote>
                         </div>
                         <!-- Quote 2 -->
                         <div class="item">
-                            <blockquote>
+                            <blockquote style="border-left: 5px solid #b61b1b00;">
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-2">
                                     <h2 style="color: #fff;text-align:left;">Industry Leading Talent</h2>
@@ -100,7 +138,7 @@
                         </div>
                         <!-- Quote 3 -->
                         <div class="item active">
-                            <blockquote>
+                            <blockquote style="border-left: 5px solid #b61b1b00;">
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-2">
                                     <h2 style="color: #fff;text-align:left;">Industry Leading Talent</h2>
@@ -136,7 +174,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-10 text-center">
                 <div class="sec-heading center">
-                    <h2 class="heading-section">The PPCR Story in numbers</h2>
+                    <h2 class="heading-section">Our Story</h2>
                   
                 </div>
             </div>
@@ -147,28 +185,28 @@
                 <div class="counter-img">
                     <img alt="Locations" src="/storage/icons/locations.png" class="img-responsive">
                 </div>
-                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">80</h2>
+                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">1</h2>
                 <p class="count-text ">Locations</p>
             </div> 
             <div class="col-lg-3 col-md-10 " style="text-align: -webkit-center;">
                 <div class="counter-img">
                     <img alt="Locations" src="/storage/icons/years.png" class="img-responsive">
                 </div>  
-                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">25</h2>
+                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">5</h2>
                 <p class="count-text ">YEARS</p>
             </div>
             <div class="col-lg-3 col-md-10 " style="text-align: -webkit-center;">
                 <div class="counter-img">
                     <img alt="Locations" src="/storage/icons/transactions.png" class="img-responsive">
                 </div>
-                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">81200+</h2>
+                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">50+</h2>
                 <p class="count-text ">TRANSACTIONS</p>
             </div>
             <div class="col-lg-3 col-md-10" style="text-align: -webkit-center;">
                 <div class="counter-img1">
                     <img alt="Locations" src="/storage/icons/softtransacted.png" class="img-responsive">
                 </div>
-                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">42M+</h2>
+                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">1.5Lac</h2>
                 <p class="count-text ">SQ.FT TRANSACTED</p>
             </div>
 
@@ -181,61 +219,61 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-10 text-center">
                 <div class="sec-heading center">
-                    <h2>The PPCR Story in numbers</h2>
+                    <h2>Our Story</h2>
                   
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-3 col-md-10 " style="text-align: -webkit-center;">
+            <div class="col-sm-6" style="text-align: -webkit-center;width: 50%;">
                 <div class="counter-img1">
                     <img alt="Locations" src="/storage/icons/locations.png" class="img-responsive">
                 </div>
-                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">80</h2>
+                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">1</h2>
                 <p class="count-text ">Locations</p>
             </div> 
-            <div class="col-lg-3 col-md-10 " style="text-align: -webkit-center;">
+            <div class="col-sm-6" style="text-align: -webkit-center;width: 50%;">
                 <div class="counter-img1">
                     <img alt="Locations" src="/storage/icons/years.png" class="img-responsive">
                 </div>  
-                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">25</h2>
+                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">5</h2>
                 <p class="count-text ">YEARS</p>
             </div>
-            <div class="col-lg-3 col-md-10 " style="text-align: -webkit-center;">
+            <div class="col-sm-6" style="text-align: -webkit-center;width: 50%;">
                 <div class="counter-img1">
                     <img alt="Locations" src="/storage/icons/transactions.png" class="img-responsive">
                 </div>
-                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">81200+</h2>
+                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">50+</h2>
                 <p class="count-text ">TRANSACTIONS</p>
             </div>
-            <div class="col-lg-3 col-md-10" style="text-align: -webkit-center;">
+            <div class="col-sm-6" style="text-align: -webkit-center;width: 50%;">
                 <div class="counter-img1">
                     <img alt="Locations" src="/storage/icons/softtransacted.png" class="img-responsive">
                 </div>
-                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">42M+</h2>
+                <h2 class="timer count-title count-number" data-to="80" data-append="" data-speed="1500">1.5Lac</h2>
                 <p class="count-text ">SQ.FT TRANSACTED</p>
             </div>
 
         </div>
     </div>
 </section>
-<section class="bg-orange">
-    <div class="container"> 
+<!--<section class="bg-orange">-->
+<!--    <div class="container"> -->
 
-        <div class="row justify-content-center">
-            <div class="col-lg-7 col-md-10 text-center">
-                <div class="sec-heading center">
-                    <h2 class="heading-section">{!! clean($title) !!}</h2>
+<!--        <div class="row justify-content-center">-->
+<!--            <div class="col-lg-7 col-md-10 text-center">-->
+<!--                <div class="sec-heading center">-->
+<!--                    <h2 class="heading-section">{!! clean($title) !!}</h2>-->
                     <!-- <p>{!! clean($description) !!}</p> -->
-                </div>
-            </div>
-        </div>
-<br>
-        <div class="row justify-content-center">
-            <testimonials-component url="{{ route('public.ajax.testimonials') }}"></testimonials-component>
-        </div>
-    </div>
-</section>
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--<br>-->
+<!--        <div class="row justify-content-center">-->
+<!--            <testimonials-component url="{{ route('public.ajax.testimonials') }}"></testimonials-component>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <!-- <section class="lg-device">
     <div class="container"> 
@@ -306,25 +344,25 @@
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-10 text-center">
                 <div class="sec-heading ">
-                    <h2 style="color:#fff;float:left;font-weight: 800;">India RE Update</h2>
-                    <a class="btn read-more-btn" href="" title="Read more India RE Updates">Read More</a>
+                    <h2 style="color:#fff;text-align:center;font-weight: 800;">Pune Corporate Update</h2>
+                    <!--<a class="btn read-more-btn" href="/news" title="Read more India RE Updates">Read More</a>-->
                 </div>
                 
             </div>
         </div>  <br>
         <marquee class="marquee-tag">
-            <span>Employability in Bangalore highest in the country (India Skill Report 2019)</span>
-            <span>Maharashtra tops list of development projects by number with 129 projects under implementation (Care Rating report)</span>
-            <span>Real estate sector expected to grow to USD 650 billion by 2025, USD 850 billion by 2028 and USD 1 trillion by 2030 (IBEF report) </span>
-            <span>IT, infrastructure sectors key to India's growth (IBEF report)</span>
-            <span>13% of India's economy expected to be contributed by real estate sector by 2025</span>
-            <span>Kerala to increase IT park space to 2.3 crore square feet</span>
-            <span>HCL to bring global IT Centre to Andhra Pradesh with Rs.7 billion investment</span>
-            <span>SmartCity Kochi converts 12% of its land into residential projects</span>
-            <span>India most sought after business destination (SEMrush study)</span>
-            <span>Indian realty market to touch $1 trillion by 2030 (KPMG survey)</span>
-            <span>Realty institutional investments touch $4 bn in 2018 as of September (KPMG report)</span>
-            <span>Average deal size for insitutional real estate investments crosses $150 million mark, highest in the five years (KPMG report)</span>
+            <span>Pune Property Corporate Reality  Achieving the Era Of Completing  50+ Corporate Construction Project.</span>
+            <span>Over 1.5Lac sq. ft. of space transacted in Pune City.</span>
+            <!--<span>Real estate sector expected to grow to USD 650 billion by 2025, USD 850 billion by 2028 and USD 1 trillion by 2030 (IBEF report) </span>-->
+            <!--<span>IT, infrastructure sectors key to India's growth (IBEF report)</span>-->
+            <!--<span>13% of India's economy expected to be contributed by real estate sector by 2025</span>-->
+            <!--<span>Kerala to increase IT park space to 2.3 crore square feet</span>-->
+            <!--<span>HCL to bring global IT Centre to Andhra Pradesh with Rs.7 billion investment</span>-->
+            <!--<span>SmartCity Kochi converts 12% of its land into residential projects</span>-->
+            <!--<span>India most sought after business destination (SEMrush study)</span>-->
+            <!--<span>Indian realty market to touch $1 trillion by 2030 (KPMG survey)</span>-->
+            <!--<span>Realty institutional investments touch $4 bn in 2018 as of September (KPMG report)</span>-->
+            <!--<span>Average deal size for insitutional real estate investments crosses $150 million mark, highest in the five years (KPMG report)</span>-->
         </marquee>
 
        
@@ -408,30 +446,55 @@
     </div>
 </section>
 
-<section class="">
-    <div class="container"> 
+<section class="pt-0">
+    <div class="container">
+
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-10 text-center">
-                <div class="sec-heading center">
-                    <h2 class="heading-section">The Worldwide Connect </h2>
-                  
+                <div class="sec-heading center mb-4">
+                    <h2 class="heading-section">Our  Clients </h2>
                 </div>
             </div>
         </div>
-        <div class="row pb-4">
-            <div class="offset-sm-1 col-sm-10">
-              <img src="/storage/maponhome.png" alt="PPCR Services - The Global Connection" title="PPCR Services - The Global Connection" style="    display: inline-block;max-width: 100%; height: auto;">
+        <section class="customer-logos slider">
+            
+            <div class="slide">
+                <img src="/storage/client/exxat-educate-smarter.png">
+                <h4 style="text-align:center;font-family:inherit;">Exxat Educate Smarter</h4>
+
             </div>
-        </div>
-        <div class="row">
-            <div class="offset-sm-1 col-sm-10 pt-5 pb-3 text-center">
-               <!-- <p>PPCR is exclusively a tenant representation firm and is part of the Exis Global network for knowledge sharing and global markets access. Through the Exis Global network, PPCR ensures that it offers the most contemporary global best practices to clients, help support the global growth intent of corporations across the world.</p> -->
-                <!-- <p class="pt-3"><a href="#" target="_blank" title="Click here to read more about our services">Click here to read more.</a></p> -->
+            <div class="slide"><img src="/storage/client/compumatrice.png">
+                <h4 style="text-align:center;font-family:inherit;">Compumatrice</h4>
             </div>
-        </div>
+            <div class="slide"><img src="/storage/client/hcl-technology.png">
+                <h4 style="text-align:center;font-family:inherit;">Hcl Technology</h4>
+            </div>
+            <div class="slide"><img src="/storage/client/hettich-international.png">
+                <h4 style="text-align:center;font-family:inherit;">Hettich International</h4>
+            </div>
+            <div class="slide"><img src="/storage/client/kompass.png">
+                <h4 style="text-align:center;font-family:inherit;">Kompass</h4>
+            </div>
+            <div class="slide"><img src="/storage/client/primetteur-solutions.png">
+                <h4 style="text-align:center;font-family:inherit;">Primetteur Solutions</h4>
+            </div>
+            <div class="slide"><img src="/storage/client/wunsche-hong-kong.png">
+                <h4 style="text-align:center;font-family:inherit;">Wunsche Hong Kong</h4>
+            </div>
+              <div class="slide"><img src="/storage/client/atharva.png">
+                <h4 style="text-align:center;font-family:inherit;">Atharav Industries</h4>
+            </div>
+            <div class="slide"><img src="/storage/client/coleda.png">
+                <h4 style="text-align:center;font-family:inherit;">Coleda B2B</h4>
+            </div>
+            <div class="slide"><img src="/storage/client/byjus.png">
+                <h4 style="text-align:center;font-family:inherit;">Byjus logo</h4>
+            </div>
+           
+        </section>
+   
     </div>
 </section>
-
 <section class="pt-0">
     <div class="container">
 
@@ -456,10 +519,38 @@
             <div class="slide"><img src="/storage/users/nyati.png"></div>
             <div class="slide"><img src="/storage/users/panchshil.png"></div>
             <div class="slide"><img src="/storage/users/supreme.png"></div>
+             <div class="slide"><img src="/storage/users/yashashree.jpeg"></div>
+             <div class="slide"><img src="/storage/users/kohinoor-group.png"></div>
+             <div class="slide"><img src="/storage/users/pride-group.png"></div>
         </section>
    
     </div>
 </section>
+<section class="">
+    <div class="container"> 
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2 class="heading-section">The Worldwide Connect </h2>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="row pb-4">
+            <div class="offset-sm-1 col-sm-10">
+              <img src="/storage/maponhome.png" alt="PPCR Services - The Global Connection" title="PPCR Services - The Global Connection" style="    display: inline-block;max-width: 100%; height: auto;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-sm-1 col-sm-10 pt-5 pb-3 text-center">
+               <!-- <p>PPCR is exclusively a tenant representation firm and is part of the Exis Global network for knowledge sharing and global markets access. Through the Exis Global network, PPCR ensures that it offers the most contemporary global best practices to clients, help support the global growth intent of corporations across the world.</p> -->
+                <!-- <p class="pt-3"><a href="#" target="_blank" title="Click here to read more about our services">Click here to read more.</a></p> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
@@ -501,7 +592,97 @@
 });
 </script>
 
+<!-- modal popup-->
 
+  
+
+  <div id="id01" class="w3-modal" style="top: 8px;">
+    <div class="w3-modal-content">
+      <div class="w3-container" style=" padding: 22px;">
+        <!--<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>-->
+        <!--<div style="text-align:center;">-->
+        <!--    <img class="logo" src="http://punepropertycorporaterealty.com/storage/ppcr-logo-300-130.png" alt=""     width="214px">-->
+        <!--</div>-->
+        <h2 style="text-align:center;">Enquiry Form</h2>
+        
+        <form id="contact-form" name="contact-form" action="" method="POST">
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0" >
+                                    <input type="text" id="name" name="name" 
+                                    class="form-control input-box" placeholder="Name" style="">
+                                    <!-- <label for="name" class="">Your name</label> -->
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="email" name="email" class="form-control input-box"
+                                     placeholder="Email">
+                                    <!-- <label for="email" class="">Your email</label> -->
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="tel" id="MobileNumber" name="phone" class="form-control input-box"
+                                     placeholder="Mobile Number">
+                                    <!-- <label for="subject" class="">Subject</label> -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="subject" name="subject" class="form-control input-box" 
+                                    placeholder="Subject">
+                                    <!-- <label for="subject" class="">Subject</label> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-12 col-lg-12">
+
+                                <div class="md-form">
+                                    <textarea type="text" id="message" name="message" rows="2"
+                                     class="form-control md-textarea input-box" placeholder="Your message"  style="    width: 97%;margin-left: 12px;"
+                                    ></textarea>
+                                    <!-- <label for="message">Your message</label> -->
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Grid row-->
+
+                    </form>
+             <div class="text-center text-md-left">
+                <a class="btn popup-btn" onclick="document.getElementById('id01').style.display='none'" >Submit</a>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- on load module for find property page-->
 <section class="pt-0">
     
     <div id="ac-wrapper" style='display:none'>
@@ -513,7 +694,7 @@
 
                 <!--Grid column-->
                 <div class="col-md-12 mb-md-0 mb-5">
-                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                    <form id="contact-form" name="contact-form" action="" method="POST">
 
                         <!--Grid row-->
                         <div class="row">
@@ -595,11 +776,11 @@
             if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
             else document.getElementById('ac-wrapper').removeAttribute('style');
         }
-        window.onload = function () {
-            setTimeout(function () {
-                PopUp('show');
-            }, 5000);
-        }
+        // window.onload = function () {
+        //     setTimeout(function () {
+        //         PopUp('show');
+        //     }, 5000);
+        // }
     </script>
 
 
